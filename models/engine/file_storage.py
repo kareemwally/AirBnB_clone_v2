@@ -12,7 +12,7 @@ class FileStorage:
         """deletes the obj in class"""
         if obj is not None:
             key = "{}.{}".format(obj.__class__.__name, obj.id)
-            del self.__objects[key]
+            self.__objects.pop(key, None)
 
     def all(self, cls=None):
         """This method returns the dictionary __objects
