@@ -43,8 +43,11 @@ def print_num(n=None):
     """ page for printing numbers only if there's number"""
     if n is None:
         return ''
-    return "{}".format("{} is a number".format(n) if n.isnumeric() else abort(404))
+    if n.isnumeric():
+        return "{} is a number".format(n)
+    else:
+        abort(404)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
