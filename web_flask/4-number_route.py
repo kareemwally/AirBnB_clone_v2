@@ -41,8 +41,6 @@ def py_describe(text=None):
 @app.route("/number/<n>", strict_slashes=False)
 def print_num(n=None):
     """ page for printing numbers only if there's number"""
-    if n is None:
-        return ''
     if n.isnumeric():
         return "{} is a number".format(n)
     else:
