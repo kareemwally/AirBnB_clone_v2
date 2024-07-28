@@ -4,6 +4,7 @@ index, home, C, Python pages in the website
 """
 
 from flask import Flask, render_template
+from flask import abort
 
 app = Flask(__name__)
 
@@ -42,8 +43,8 @@ def print_num(n=None):
     """ page for printing numbers only if there's number"""
     if n is None:
         return ''
-    return "{}".format("{} is a number".format(n) if n.isnumeric() else "")
+    return "{}".format("{} is a number".format(n) if n.isnumeric() else abort(404))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
