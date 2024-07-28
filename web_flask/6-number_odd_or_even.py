@@ -47,5 +47,25 @@ def print_num(n=None):
         abort(404)
 
 
+@app.route("/number_template/", strict_slashes=False)
+@app.route("/number_template/<n>", strict_slashes=False)
+def number_page(n):
+    """ returns the HTML psge only if n is number"""
+    if n is not None and n.isnumeric():
+        return render_template('5-number.html', n=n)
+    else:
+        return abort(404)
+
+
+@app.route("/number_odd_or_even/", strict_slashes=False)
+@app.route("/number_odd_or_even/<n>", strict_slashes=False)
+def odd_or_even(n):
+    """ returns a HTML page only to integers & shows even|odd"""
+    if n is not None and n.isnumeric():
+        return render_template('6-number_odd_or_even.html', n=int(n))
+    else:
+        return abort(404)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
