@@ -44,7 +44,7 @@ def print_num(n=None):
     if n.isnumeric():
         return "{} is a number".format(n)
     else:
-        abort(404)
+        return "Not a number", 404
 
 
 if __name__ == '__main__':
