@@ -11,13 +11,13 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def main():
     """ our index page """
-    return "<p>Hello HBNB!</p>"
+    return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """ the home page of HBNB"""
-    return "<p>HBNB</P>"
+    return "HBNB"
 
 
 if __name__ == '__main__':
